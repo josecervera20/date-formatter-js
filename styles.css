@@ -1,0 +1,116 @@
+/* Reset general para evitar márgenes/paddings por defecto y usar box-sizing: border-box en todos los elementos */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables CSS personalizadas para colores */
+:root {
+    --dark-grey: #0a0a23;
+    --white: #ffffff;
+    --yellow: #f1be32;
+}
+
+/* Estilos para el elemento body */
+body {
+    color: var(--white);
+    background-color: var(--dark-grey);
+}
+
+/* Contenedor del título y el SVG */
+.title-container {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Título principal */
+.title {
+    font-size: 2.5rem;
+}
+
+/* Estilos del icono SVG de la fecha */
+.date-svg {
+    width: 30px;
+    height: 30px;
+}
+
+/* Línea divisoria amarilla */
+.divider {
+    margin: auto;
+    width: 150px;
+    height: 10px;
+    background-color: var(--yellow);
+}
+
+/* Contenedor del menú desplegable */
+.dropdown-container {
+    width: 50%;
+    margin: 40px auto;
+    position: relative;
+}
+
+/* Estilo base del elemento <select> */
+select {
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
+    height: 50px;
+    font-size: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--white);
+    border: none;
+    color: var(--dark-grey);
+    appearance: none;
+    padding: 10px;
+    padding-right: 38px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: color 0.3s ease, background-color 0.3s ease,
+        border-bottom-color 0.3s ease;
+}
+
+/* Contenedor del icono del select */
+.select-icon {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 30px;
+    height: 36px;
+    pointer-events: none;
+    padding-left: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estilos del SVG dentro del icono del select */
+.select-icon svg.icon {
+    transition: fill 0.3s ease;
+    fill: var(--dark-grey);
+}
+
+/* Estilos para el párrafo que mostrará la fecha actual */
+#current-date {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Media query para pantallas pequeñas (máximo 375px de ancho) */
+@media (max-width: 375px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .dropdown-container {
+        width: 80%;
+    }
+
+    .date-svg {
+        display: none;
+    }
+}
